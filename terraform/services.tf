@@ -17,8 +17,8 @@ resource "kubernetes_secret" "sealed-secrets-key-1" {
   }
 
   data = {
-    "tls.crt" = local.sealed_secrets_keys.sealed_secrets_key_01_crt
-    "tls.key" = local.sealed_secrets_keys.sealed_secrets_key_01_key
+    "tls.crt" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_01_crt)
+    "tls.key" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_01_key)
   }
 
   type = "kubernetes.io/tls"
@@ -35,8 +35,8 @@ resource "kubernetes_secret" "sealed-secrets-key-2" {
   }
 
   data = {
-    "tls.crt" = local.sealed_secrets_keys.sealed_secrets_key_02_crt
-    "tls.key" = local.sealed_secrets_keys.sealed_secrets_key_02_key
+    "tls.crt" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_02_crt)
+    "tls.key" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_02_key)
   }
 
   type = "kubernetes.io/tls"
@@ -53,8 +53,8 @@ resource "kubernetes_secret" "sealed-secrets-key-3" {
   }
 
   data = {
-    "tls.crt" = local.sealed_secrets_keys.sealed_secrets_key_03_crt
-    "tls.key" = local.sealed_secrets_keys.sealed_secrets_key_03_key
+    "tls.crt" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_03_crt)
+    "tls.key" = base64decode(local.sealed_secrets_keys.sealed_secrets_key_03_key)
   }
 
   type = "kubernetes.io/tls"
